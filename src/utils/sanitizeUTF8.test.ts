@@ -20,4 +20,9 @@ describe('UTF-8 Sanitization', () => {
     const input = '你好，世界！';
     expect(sanitizeUTF8(input)).toBe('你好，世界！');
   });
+
+  it('should preserve emoji characters', () => {
+    const input = 'Hello😀World';
+    expect(sanitizeUTF8(input)).toBe('Hello😀World');
+  });
 });
